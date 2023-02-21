@@ -4,3 +4,5 @@ Object:程序中的对象/实例,例如Go中的结构体实例
 Relational:关系数据库,例如MySQL
 
 
+文件夹:  
+liwenzhou: https://liwenzhou.com/posts/Go/gorm/
