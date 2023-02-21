@@ -30,5 +30,5 @@ func (this *Stack) List() {
 }
 
 func main() {
-	fmt.Println("hello world")
+	fmt.Println("hello stack")
 }
