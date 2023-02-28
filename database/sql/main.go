@@ -86,6 +86,23 @@ func insertRow(name string, age int) {
 	fmt.Printf("insert success, the id is %d.\n", theId)
 }
 
+// 更新数据
+func updateRow(age int, id int) {
+	sqlStr := "update user set age=? where id=?"
+	ret, err := db.Exec(sqlStr, age, id)
+	if err != nil {
+		fmt.Printf("update failed, error:%v\n", err)
+		return
+	}
+	var n int64
+	n, err = ret.RowsAffected() //影响操作的行数
+	if err != nil {
+		fmt.Printf("get RowsAffected failed, error:%v\n", err)
+		return
+	}
+	fmt.Printf("update success, affectd rows:%d\n", n)
+}
+
 func main() {
 	if err := initSQL(); err != nil {
 		fmt.Printf("connect to db failed, err:%v\n", err)
@@ -93,6 +110,7 @@ func main() {
 	defer db.Close()
 	fmt.Println("connect to db success!")
 	//queryOneRow()
-	insertRow("老默", 38)
+	//insertRow("老默", 38)
+	updateRow(39, 11) //这里有sql注入的问题，绝对不能让用户去拼接sql语句
 	queryMultiRow()
 }
