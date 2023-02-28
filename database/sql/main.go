@@ -47,11 +47,52 @@ func queryOneRow() {
 	fmt.Printf("id:%d, name:%s, age:%d\n", u.id, u.name, u.age)
 }
 
+// 查询多条示例
+func queryMultiRow() {
+	sqlStr := "select id, name, age from user where id>?"
+	rows, err := db.Query(sqlStr, 0)
+	if err != nil {
+		fmt.Printf("query failed, error:%v\n", err)
+		return
+	}
+	defer rows.Close()
+
+	//循环读取结果中的数据
+	for rows.Next() {
+		var u user
+		err = rows.Scan(&u.id, &u.name, &u.age)
+		if err != nil {
+			fmt.Printf("scan failed, error:%v\n", err)
+			return
+		}
+		fmt.Printf("id:%d name:%s age:%d\n", u.id, u.name, u.age)
+	}
+}
+
+// 插入、更新和删除操作都使用Exec方法
+func insertRow(name string, age int) {
+	sqlStr := "insert into user (name, age) values (?,?)"
+	ret, err := db.Exec(sqlStr, name, age)
+	if err != nil {
+		fmt.Printf("insert failed, error:%v\n", err)
+		return
+	}
+	var theId int64
+	theId, err = ret.LastInsertId()
+	if err != nil {
+		fmt.Printf("get lastinsert ID failed, error:%v\n", err)
+		return
+	}
+	fmt.Printf("insert success, the id is %d.\n", theId)
+}
+
 func main() {
 	if err := initSQL(); err != nil {
 		fmt.Printf("connect to db failed, err:%v\n", err)
 	}
 	defer db.Close()
 	fmt.Println("connect to db success!")
-	queryOneRow()
+	//queryOneRow()
+	insertRow("老默", 38)
+	queryMultiRow()
 }
