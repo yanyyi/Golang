@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/xml"
 	"fmt"
+	"io"
 	"os"
 )
 
@@ -28,7 +29,7 @@ type Comment struct {
 }
 
 func main() {
-	xmlFile, err := os.Open("Web_Services/xml/encoder/post.xml")
+	xmlFile, err := os.Open("Web_Services/xml/decoder/post.xml")
 	if err != nil {
 		fmt.Println("Error opening XML file:", err)
 		return
@@ -43,11 +44,23 @@ func main() {
 	//xml.Unmarshal(xmlData, &post)
 	decoder := xml.NewDecoder(xmlFile) //根据给定的XML数据生成相应的解码器
 	for {
+		t, err := decoder.Token() //每进行一次迭代,就从解码器里面获取一个token
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			fmt.Println("Error decoding XML into tokens:", err)
+			break
+		}
 
+		switch se := t.(type) { //检查token类型
+		case xml.StartElement:
+			if se.Name.Local == "comment" {
+				var comment Comment
+				decoder.DecodeElement(&comment, &se) //将xml数据解码至结构体
+				fmt.Println(comment)
+			}
+		}
 	}
-
-	fmt.Println(post)
-	fmt.Println("\n")
-	fmt.Println(post.Xml)
 
 }
