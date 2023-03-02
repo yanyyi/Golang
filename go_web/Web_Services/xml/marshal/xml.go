@@ -38,5 +38,5 @@ func main() {
 		fmt.Println("Error writing XML to file:", err)
 		return
 	}
-
+	//fmt.Println("\n")
 }

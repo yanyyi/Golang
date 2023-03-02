@@ -40,5 +40,5 @@ func main() {
 		fmt.Println("Error encoding XML to file:", err)
 		return
 	}
-
+	fmt.Println("\n")
 }
