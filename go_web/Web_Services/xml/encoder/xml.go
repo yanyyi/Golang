@@ -3,17 +3,14 @@ package main
 import (
 	"encoding/xml"
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
-// 定义一些结构,用于表示数据
 type Post struct {
 	XMLName xml.Name `xml:"post"`
 	Id      string   `xml:"id,attr"`
 	Content string   `xml:"content"`
 	Author  Author   `xml:"author"`
-	Xml     string   `xml:",innerxml"`
 }
 
 type Author struct {
@@ -22,19 +19,26 @@ type Author struct {
 }
 
 func main() {
-	xmlFile, err := os.Open("Web_Services/xml/encoder/post.xml")
+	post := Post{
+		Id:      "1",
+		Content: "Hello World!",
+		Author: Author{
+			Id:   "2",
+			Name: "Sau Sheong",
+		},
+	}
+
+	xmlFile, err := os.Create("post.xml")
 	if err != nil {
-		fmt.Println("Error opening XML file:", err)
+		fmt.Println("Error creating XML file:", err)
 		return
 	}
-	defer xmlFile.Close()
-	xmlData, err := ioutil.ReadAll(xmlFile)
+	encoder := xml.NewEncoder(xmlFile)
+	encoder.Indent("", "\t")
+	err = encoder.Encode(&post)
 	if err != nil {
-		fmt.Println("Error reading XML data:", err)
+		fmt.Println("Error encoding XML to file:", err)
 		return
 	}
-	var post Post
-	xml.Unmarshal(xmlData, &post)
-	fmt.Println(post)
 
 }
