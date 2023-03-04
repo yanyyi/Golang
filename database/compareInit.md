@@ -1,6 +1,6 @@
 SQL初始化   
 
-![initSQL](initSQL.png)
+![initSQL](initSQ.png)
 
 Redis初始化  
 
