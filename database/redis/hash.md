@@ -1,7 +1,7 @@
 
 `hset user:1001 id 1`   
 
-`hset user:1002 name Mike`  
+`hset user:1001 name Mike`  
 
 `hget user:1001 name`  
 "Mike"

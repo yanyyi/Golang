@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/go-redis/redis"
 )
 
@@ -18,9 +17,11 @@ func initClient() (err error) {
 	return err
 }
 
-func main() {
-	if err := initClient(); err != nil {
-		fmt.Printf("init redis client failed, err: %v\n", err)
-	}
-	fmt.Println("connect redis success...")
-}
+//func main() {
+//	if err := initClient(); err != nil {
+//		fmt.Printf("init redis client failed, err: %v\n", err)
+//	}
+//	fmt.Println("connect redis success...")
+//	//程序退出时释放相关资源
+//	defer rdb.Close()
+//}
