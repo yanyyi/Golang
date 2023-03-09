@@ -8,6 +8,9 @@ func longestPalindrome(s string) string {
 	result := string(s[0])
 	maxLen := 0
 	for low := 0; low < len(s); low++ {
+		if len(s)-low < maxLen {
+			break
+		}
 		for high := low + 1; high < len(s)+1; high++ {
 			if isPalindrome(s[low:high]) {
 				if high-low > maxLen {
