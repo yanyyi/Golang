@@ -17,7 +17,7 @@ func CreateTodo(c *gin.Context) {
 	c.BindJSON(&todo)
 	err := models.CreateATodo(&todo)
 	if err != nil {
-		c.JSON(http.StatusOK, gin.H{"erroe": err.Error()})
+		c.JSON(http.StatusOK, gin.H{"error": err.Error()})
 	} else {
 		c.JSON(http.StatusOK, todo)
 	}
