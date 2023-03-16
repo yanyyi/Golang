@@ -1,0 +1,62 @@
+{"level":"DEBUG","time":"2023-03-16T17:58:05.155+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-16T17:58:09.485+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-16T17:58:22.900+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-16T17:58:47.726+0800","caller":"logger/logger.go:71","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T17:58:47.905+0800","caller":"logger/logger.go:71","msg":"/favicon.ico","status":200,"method":"GET","path":"/favicon.ico","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T17:58:54.694+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-16T18:30:23.840+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-16T18:30:45.123+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:32:19.095+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:34:25.692+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"username=zyh2000&password=1234567&re_password=1234567","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0050219}
+{"level":"INFO","time":"2023-03-16T18:38:45.992+0800","caller":"logger/logger.go:71","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0009989}
+{"level":"INFO","time":"2023-03-16T18:39:16.251+0800","caller":"logger/logger.go:71","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:39:44.790+0800","caller":"logger/logger.go:71","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:39:57.636+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:42:22.952+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:43:07.118+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-16T18:43:29.652+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-16T18:43:33.341+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:44:12.360+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-16T18:45:25.782+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-03-16T18:45:29.197+0800","caller":"controller/user.go:17","msg":"SignUp with invalid param","error":"json: cannot unmarshal number into Go struct field ParamSignUp.password of type string"}
+{"level":"INFO","time":"2023-03-16T18:45:29.197+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0002527}
+{"level":"INFO","time":"2023-03-16T18:45:50.962+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0652663}
+{"level":"ERROR","time":"2023-03-16T18:45:57.222+0800","caller":"controller/user.go:17","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2023-03-16T18:45:57.222+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0}
+{"level":"INFO","time":"2023-03-16T18:46:12.216+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-16T19:10:45.798+0800","caller":"Reddit/main.go:34","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-03-16T19:10:59.023+0800","caller":"controller/user.go:17","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2023-03-16T19:10:59.023+0800","caller":"logger/logger.go:71","msg":"/api/v1/signup","status":200,"method":"POST","path":"/api/v1/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0008738}
+{"level":"INFO","time":"2023-03-16T19:11:08.238+0800","caller":"Reddit/main.go:81","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-16T22:11:11.377+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-03-16T22:12:04.172+0800","caller":"controller/user.go:60","msg":"login.Login failed","username":"zyh2000","error":"密码错误"}
+{"level":"INFO","time":"2023-03-16T22:12:04.172+0800","caller":"logger/logger.go:71","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.018908}
+{"level":"INFO","time":"2023-03-16T22:12:09.963+0800","caller":"logger/logger.go:71","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0010627}
+{"level":"INFO","time":"2023-03-16T22:20:09.518+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-17T00:00:40.588+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-17T00:00:54.157+0800","caller":"logger/logger.go:71","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0119935}
+{"level":"INFO","time":"2023-03-17T00:06:02.009+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-17T00:29:02.445+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-17T00:29:17.623+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/2","status":200,"method":"GET","path":"/api/v1/community/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0082469}
+{"level":"INFO","time":"2023-03-17T00:29:24.810+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/3","status":200,"method":"GET","path":"/api/v1/community/3","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0005515}
+{"level":"INFO","time":"2023-03-17T00:29:52.807+0800","caller":"logger/logger.go:71","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.045105}
+{"level":"INFO","time":"2023-03-17T00:29:58.978+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/2","status":200,"method":"GET","path":"/api/v1/community/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0004306}
+{"level":"INFO","time":"2023-03-17T00:30:54.089+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-17T00:32:16.959+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-17T00:32:21.516+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/2","status":200,"method":"GET","path":"/api/v1/community/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0087133}
+{"level":"INFO","time":"2023-03-17T00:32:25.592+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/3","status":200,"method":"GET","path":"/api/v1/community/3","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0005447}
+{"level":"INFO","time":"2023-03-17T00:33:31.132+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-17T00:33:37.870+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-17T00:33:41.960+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/3","status":200,"method":"GET","path":"/api/v1/community/3","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0351709}
+{"level":"INFO","time":"2023-03-17T00:36:08.654+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-17T00:37:58.077+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-03-17T00:38:02.425+0800","caller":"controller/community.go:24","msg":"logic.GetCommunityDetailList() failed","error":"expected slice but got struct"}
+{"level":"INFO","time":"2023-03-17T00:38:02.426+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/3","status":200,"method":"GET","path":"/api/v1/community/3","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0146854}
+{"level":"INFO","time":"2023-03-17T00:38:06.158+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-17T00:41:09.839+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-03-17T00:41:13.078+0800","caller":"controller/community.go:24","msg":"logic.GetCommunityDetailList() failed","error":"expected slice but got struct"}
+{"level":"INFO","time":"2023-03-17T00:41:13.078+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/3","status":200,"method":"GET","path":"/api/v1/community/3","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0039657}
+{"level":"INFO","time":"2023-03-17T00:41:20.852+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2023-03-17T00:43:03.041+0800","caller":"Reddit/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-03-17T00:43:05.740+0800","caller":"logger/logger.go:71","msg":"/api/v1/community/3","status":200,"method":"GET","path":"/api/v1/community/3","query":"","ip":"::1","user-agent":"PostmanRuntime/7.31.1","errors":"","cost":0.0061369}
+{"level":"INFO","time":"2023-03-17T00:43:09.701+0800","caller":"Reddit/main.go:82","msg":"Shutdown Server ..."}
