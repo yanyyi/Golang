@@ -2,53 +2,31 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
-func oneQuickSort(arr []int, low int, high int) int {
-	pivot := arr[low]
-	for low < high {
-		for low < high {
-			if arr[high] >= pivot {
-				high--
-				continue
-			} else {
-				arr[low] = arr[high]
-				low++
-				break
-			}
-		}
-
-		for low < high {
-			if arr[low] <= pivot {
-				low++
-				continue
-			} else {
-				arr[high] = arr[low]
-				high--
-				break
-			}
-		}
-
+func quickSort(arr []int) []int {
+	if len(arr) < 2 {
+		return arr
 	}
-	arr[low] = pivot
-	return low
-
-}
-
-func quickSort(arr []int, low int, high int) {
-	if low < high {
-		pivotpos := oneQuickSort(arr, low, high)
-		quickSort(arr, 0, pivotpos-1)
-		quickSort(arr, pivotpos+1, high)
+	pivot := arr[0] // 以第一个元素作为基准值
+	var left, right []int
+	for _, v := range arr[1:] {
+		if v < pivot {
+			left = append(left, v)
+		} else {
+			right = append(right, v)
+		}
 	}
+	left = quickSort(left)
+	right = quickSort(right)
+	return append(append(left, pivot), right...)
 }
 
 func main() {
-	start := time.Now()
+	//start := time.Now()
 	arr := []int{12, 45, 33, 78, 9, 908, 14, 98, 765}
-	quickSort(arr, 0, len(arr)-1)
+	arr = quickSort(arr)
 	fmt.Println("快速排序的结果为:", arr)
-	end := time.Since(start)
-	fmt.Println("快速排序时间为:", end)
+	//end := time.Since(start)
+	//fmt.Println("快速排序时间为:", end)
 }

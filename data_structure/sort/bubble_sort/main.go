@@ -5,15 +5,11 @@ import (
 	"time"
 )
 
-func bubbleSort(a []int) {
-	llen := len(a)
-
-	for i := 0; i < llen-1; i++ {
-		for j := llen - 1; j > i; j-- {
-			if a[j] < a[j-1] {
-				temp := a[j]
-				a[j] = a[j-1]
-				a[j-1] = temp
+func bubbleSort(arr []int) {
+	for i := 0; i < len(arr)-1; i++ {
+		for j := 0; j < len(arr)-i-1; j++ {
+			if arr[j] > arr[j+1] {
+				arr[j], arr[j+1] = arr[j+1], arr[j]
 			}
 		}
 	}
