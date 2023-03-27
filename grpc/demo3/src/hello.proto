@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package="./;main";
+package main;
+
+message String{
+  string value = 2023;
+}
+
+service PubsubService{
+  rpc Publish (String) returns (String);
+  rpc Subscribe (String) returns (stream String);
+}
