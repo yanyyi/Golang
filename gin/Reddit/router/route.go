@@ -29,6 +29,11 @@ func Setup() *gin.Engine {
 	{
 		v1.GET("/community", controller.CommunityHandler)
 		v1.GET("/community/:id", controller.CommunityDetailHandler)
+		v1.POST("/post", controller.CreatePostHandler)
+		v1.GET("/post/:id", controller.GetPostDetailHandler)
+		v1.GET("/posts", controller.GetPostListHandler)
+
+		v1.POST("/vote", controller.PostVoteController)
 	}
 	////r.GET("/ping", middlewares.JWTAuthMiddleware(), func(c *gin.Context) {
 	////	//如果是登录的用户,判断请求头中是否有有效的 JWT?

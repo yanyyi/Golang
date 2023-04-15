@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
+	"redis/src"
 )
 
 func main() {
-	err := initClient()
+	err := src.initClient()
 	if err != nil {
 		fmt.Printf("init client failed, error:%v\n", err)
 		return
 	}
 	fmt.Println("init connection success.")
-	defer rdb.Close()
+	defer src.rdb.Close()
 
 	zsetKey := "topn"
 	//languages := []redis.Z{
@@ -48,7 +49,7 @@ func main() {
 	//}
 	//fmt.Println(ret)  //返回一个列表[PHP C++ Java]
 
-	ranking, err := rdb.ZRank(zsetKey, "C++").Result()
+	ranking, err := src.rdb.ZRank(zsetKey, "C++").Result()
 	if err != nil {
 		fmt.Printf("zrank failed, error:%v\n", err)
 		return
