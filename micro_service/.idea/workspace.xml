@@ -4,49 +4,21 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54b19a26-2b2f-47e0-9b16-abfec082f43b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../database/redis/src/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/controller/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/controller/vote.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/dao/mysql/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/dao/redis/keys.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/dao/redis/vote.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/logic/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/logic/vote.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gin/Reddit/models/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/proto/hello.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/proto/hello.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_client/proto/hello_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_server/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_server/pb/hello.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_server/pb/hello.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gRPC/hello_server/pb/hello_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net_rpc/client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net_rpc/server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc/client/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/redis/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../database/redis/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/redis/zset.go" beforeDir="false" afterPath="$PROJECT_DIR$/../database/redis/zset.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gin/Reddit/controller/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/../gin/Reddit/controller/request.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gin/Reddit/dao/mysql/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/../gin/Reddit/dao/mysql/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gin/Reddit/models/params.go" beforeDir="false" afterPath="$PROJECT_DIR$/../gin/Reddit/models/params.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gin/Reddit/reddit.log" beforeDir="false" afterPath="$PROJECT_DIR$/../gin/Reddit/reddit.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gin/Reddit/router/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/../gin/Reddit/router/route.go" afterDir="false" />
+    <list default="true" id="54b19a26-2b2f-47e0-9b16-abfec082f43b" name="Changes" comment="add go micro-service module">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file://C:/go" />
   <component name="Git.Settings">
@@ -62,6 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -70,14 +43,24 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/桌面/goprojects/B站学府Golang全栈课程/Golang/micro_service",
+    "last_opened_file_path": "D:/桌面/goprojects/B站学府Golang全栈课程/Golang/micro_service/DEMO",
     "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)"
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\桌面\goprojects\B站学府Golang全栈课程\Golang\micro_service\protobuf\pb" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add go micro-service module" />
+    <option name="LAST_COMMIT_MESSAGE" value="add go micro-service module" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
