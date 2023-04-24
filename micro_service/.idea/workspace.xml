@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b19a26-2b2f-47e0-9b16-abfec082f43b" name="Changes" comment="add go micro-service module">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEMO/command.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEMO/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEMO/proto/author/author.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEMO/proto/author/author.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEMO/proto/book/book.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEMO/proto/book/book_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEMO/proto/book/price.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_service/add_client/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_service/add_client/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_service/add_server/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_service/add_server/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_service/add_server/proto/add.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_service/add_server/proto/add.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_service/add_server/proto/add_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gRPC/hello_server/pb/hello.proto" beforeDir="false" afterPath="$PROJECT_DIR$/gRPC/hello_server/pb/hello.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +56,7 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/桌面/goprojects/B站学府Golang全栈课程/Golang/micro_service/DEMO",
+    "last_opened_file_path": "D:/桌面/goprojects/B站学府Golang全栈课程/Golang/micro_service/gRPC",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default"

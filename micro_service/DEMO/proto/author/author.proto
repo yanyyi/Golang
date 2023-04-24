@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package author;
+
+option go_package = "demp/proto/author";
+
+message Info{
+    string name =1;
+    
+}
