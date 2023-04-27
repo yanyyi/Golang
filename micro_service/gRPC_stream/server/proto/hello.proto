@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "grpc_server/proto";
+
+package proto;
+
+message HelloRequest{
+  string name=1;
+  int32 age=2;
+}
+
+message HelloResponse{
+  string reply=1;
+}
+
+service Greeter{
+  // 定义方法
+  rpc SayHello(HelloRequest) returns (HelloResponse){};
+  // 服务端返回流式数据
+  rpc LotsOfReplies(HelloRequest) returns (stream HelloResponse);
+  //客户端发送流式数据
+  rpc LotofGreetings(stream HelloRequest) returns (HelloResponse);
+}

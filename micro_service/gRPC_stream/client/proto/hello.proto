@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package= "grpc_client/proto";
+
+package proto;  //proto文件模块，必须与server保持一致
+
+message HelloRequest{
+  string name = 1;
+}
+
+message HelloResponse{
+  string reply=1;
+}
+
+service Greeter{
+  rpc SayHello(HelloRequest) returns (HelloResponse){};
+  rpc LotsOfReplies(HelloRequest) returns (stream HelloResponse);
+  rpc LotofGreetings(stream HelloRequest) returns (HelloResponse);
+}
