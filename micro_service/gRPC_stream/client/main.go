@@ -7,6 +7,7 @@ import (
 	"gRPC_stream/server/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+
 	"io"
 	"log"
 	"time"
@@ -29,16 +30,30 @@ func main() {
 	}
 	defer conn.Close()
 	//创建客户端
-	c := proto.NewGreeterClient(conn) //使用生成的Go代码
+	c := proto.NewGreeterClient(conn) //使用生成的Go代码,返回GreeterClient接口类型
 
+	//调用普通RPC
+	callSayHello(c)
 	//调用流式RPC
 	//callLotsOfReplies(c)
-	sendLotOfGreetings(c)
+	//sendLotOfGreetings(c)
 
+}
+func callSayHello(c proto.GreeterClient) {
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	resp, err := c.SayHello(ctx, &proto.HelloRequest{
+		Name: *name,
+		Age:  int32(*age),
+	})
+	if err != nil {
+		fmt.Printf("error:%v\n", err)
+		return
+	}
+	fmt.Println("reply: ", resp.Reply)
 }
 
 func callLotsOfReplies(c proto.GreeterClient) {
-
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 	stream, err := c.LotsOfReplies(ctx, &proto.HelloRequest{Name: *name, Age: int32(*age)})
