@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package= "server/proto";
+
+package proto;  // proto文件模块
+
+import "google/api/annotations.proto";
+
+
+message HelloRequest{
+  string name = 1;
+}
+
+message HelloResponse{
+  string reply=1;
+}
+
+service Greeter{
+  rpc SayHello(HelloRequest) returns (HelloResponse){
+      // 写注释 gRPC-Gateway用到的注释
+     option (google.api.http) = {
+        post: "/v1/hello" //HTTP接口path
+        body: "*"
+     };
+
+  }
+}
