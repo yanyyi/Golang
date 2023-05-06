@@ -12,6 +12,7 @@ func main() {
 	// 创建 HTTP 服务器
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
+
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -26,7 +27,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	case <-ctx.Done():
 		fmt.Fprint(w, "Cancelled or timed out.")
 	}
-
 }
 
 /*
