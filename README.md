@@ -1,10 +1,11 @@
-###  Golang全栈笔记  
+#  Golang全栈笔记  
 
 
-最近要准备春招,想起之前学习Go语言的时候没有把代码记录下来,就想着建个仓库，一边找工作一边将之前学过的知识保存在仓库里，于是就有了这个Golang全栈笔记.  
+## 前言 
+很幸运成为了一名Go语言工程师，这个仓库本来是我春招用来作为简历上的开源项目，现在如愿以偿。之后我打算把这个仓库持续更新下去，记录我学习Go语言的点点滴滴，欢迎对Go语言入门感兴趣的小伙伴star
 
-之后我会一直更新这个仓库,作为开源仓库供Golang爱好者交流和学习.
 
+## 目录
 Go语言基础知识: [basic](https://github.com/YihanZeng2000/Golang/tree/main/basic)
 
 Go语言书籍部分相关代码的复现: [book](https://github.com/YihanZeng2000/Golang/tree/main/book/go_web)
