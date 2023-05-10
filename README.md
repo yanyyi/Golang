@@ -16,7 +16,7 @@ Go语言操作数据库: [database](https://github.com/YihanZeng2000/Golang/tree
 
 docker常见命令: [docker](https://github.com/YihanZeng2000/Golang/tree/main/docker)
 
-Go语言实现Web框架: [gee-web](https://github.com/YihanZeng2000/Golang/tree/main/gee-web)
+Go语言仿照Gin实现的Web框架: [toy](https://github.com/YihanZeng2000/Golang/tree/main/toy)
 
 基于Gin框架的Go语言项目: [gin](https://github.com/YihanZeng2000/Golang/tree/main/gin)
 
