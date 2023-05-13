@@ -1,7 +1,9 @@
+### 使用示例
+```go
 package main
 
 import (
-	"Golang/toy"
+	"toy"
 	"net/http"
 )
 
@@ -27,3 +29,5 @@ func main() {
 
 	r.Run(":9999")
 }
+
+```
