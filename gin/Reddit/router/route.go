@@ -25,6 +25,7 @@ func Setup() *gin.Engine {
 	////登录
 	v1.POST("/login", controller.LoginHandler)
 	//
+
 	v1.Use(middleware.JWTAuthMiddleware()) //应用JWT认证中间件
 	{
 		v1.GET("/community", controller.CommunityHandler)
