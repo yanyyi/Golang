@@ -6,7 +6,6 @@
 
 
 ## 目录
-Go语言基础知识: [basic](https://github.com/YihanZeng2000/Golang/tree/main/basic)
 
 Go语言书籍部分相关代码的复现: [book](https://github.com/YihanZeng2000/Golang/tree/main/book/go_web)
 
