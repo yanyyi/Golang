@@ -11,14 +11,14 @@ import (
 // 本项目使用简化版的投票分数
 /* 投票的几种情况
 direction=1时,有两种情况:
-	1.之前没有投过票，现在投赞成票   --> 更新分数和投票记录  差值的绝对值:1  +432    -------
-	2.之前投反对票，现在改投赞成票   --> 更新分数和投票记录  差值的绝对值:2  +432*2  -------
+	1.之前没有投过票，现在投赞成票   --> 更新分数和投票记录  差值的绝对值:1  +432
+	2.之前投反对票，现在改投赞成票   --> 更新分数和投票记录  差值的绝对值:2  +432*2
 direction=0时,有两种情况:
-	1.之前投过反对票，现在要取消投票  --> 更新分数和投票记录  差值的绝对值:1  +432   -------前三种情况,现在的值大于原来的值
-	2.之前投过赞成票，现在要取消投票  --> 更新分数和投票记录  差值的绝对值:1  -432   xxxxxxxx
+	1.之前投过反对票，现在要取消投票  --> 更新分数和投票记录  差值的绝对值:1  +432
+	2.之前投过赞成票，现在要取消投票  --> 更新分数和投票记录  差值的绝对值:1  -432
 direction=-1时,有两种情况:
-	1.之前没有投过票，现在投反对票    --> 更新分数和投票记录  差值的绝对值:1  -432  xxxxxxxxx
-	2.之前投过赞成票。现在改投反对票  --> 更新分数和投票记录  差值的绝对值:2  -432*2  xxxxxxxxx后三种情况,现在的值小于原来的值
+	1.之前没有投过票，现在投反对票    --> 更新分数和投票记录  差值的绝对值:1  -432
+	2.之前投过赞成票。现在改投反对票  --> 更新分数和投票记录  差值的绝对值:2  -432*2
 
 
 投票的限制:
@@ -38,7 +38,6 @@ var (
 )
 
 func CreatePost(postID, communityID int64) error {
-
 	pipeline := client.TxPipeline()
 	//帖子时间
 	pipeline.ZAdd(getRedisKey(KeyPostTimeZSet), redis.Z{
@@ -60,42 +59,34 @@ func CreatePost(postID, communityID int64) error {
 }
 
 // VoteForPost给帖子投票
-func VoteForPost(userID, postID string, value float64) (err error) {
-	// 1.判断投票限制
-	// 去redis取帖子发布时间
+func VoteForPost(userID string, postID string, value float64) (err error) { //userID:谁； postID:哪个帖子  value:分数
+	//去帖子取发布时间,超过一星期不允许再投票
 	postTime := client.ZScore(getRedisKey(KeyPostTimeZSet), postID).Val()
 	if float64(time.Now().Unix())-postTime > oneWeekInSeconds {
 		return ErrVoteTimeExpire
 	}
-	// 2和3需要放到一个pipeline事务中操作
-
-	// 2.更新帖子的分数
-	// 先查当前用户给当前帖子的投票记录
-	ov := client.ZScore(getRedisKey(KeyPostVotedZSetPrefix+postID), userID).Val()
-	// 更新:如果这一次投票的值和之前保存的值一致,就提示不允许重复投票
-	if value == ov {
-		return ErrVoteRepeated
-	}
-	var op float64
-	if value > ov {
-		op = 1
+	// 更新帖子分数
+	oldValue := client.ZScore(getRedisKey(KeyPostVotedZSetPrefix+postID), userID).Val() //查询当前用户给当前帖子的投票记录
+	var direction float64
+	if value > oldValue {
+		direction = 1
 	} else {
-		op = -1
+		direction = -1
 	}
-	diff := math.Abs(ov - value) //计算两次投票的差值
-	pipeline := client.TxPipeline()
-	pipeline.ZIncrBy(getRedisKey(KeyPostScoreZSet), op*diff*scorePerVote, postID)
+	diff := math.Abs(oldValue - value) //计算两次投票的差值
 
-	// 3.记录用户为该帖子投票的数据
-	if value == 0 {
-		pipeline.ZRem(getRedisKey(KeyPostVotedZSetPrefix+postID), userID)
+	_, err = client.ZIncrBy(getRedisKey(KeyPostScoreZSet), diff*direction*scorePerVote, postID).Result()
+
+	// 记录用户为帖子投票的数据
+	if value == 0 { //删除该用户的投票记录
+		_, err = client.ZRem(getRedisKey(KeyPostVotedZSetPrefix+postID), userID).Result()
+
 	} else {
-		pipeline.ZAdd(getRedisKey(KeyPostVotedZSetPrefix+postID), redis.Z{
+		_, err = client.ZAdd(getRedisKey(KeyPostVotedZSetPrefix+postID), redis.Z{
 			Score:  value, //赞成票还是反对票
 			Member: userID,
-		})
+		}).Result()
 	}
 
-	_, err = pipeline.Exec()
-	return
+	return err
 }

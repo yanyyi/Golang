@@ -16,6 +16,7 @@ func CreatePost(p *models.Post) (err error) {
 	if err != nil {
 		return err
 	}
+	//err = redis.CreatePost(p.ID, p.CommunityID)
 	err = redis.CreatePost(p.ID, p.CommunityID)
 	return
 	// 3. 返回
