@@ -3,6 +3,7 @@ package toy
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -96,4 +97,18 @@ func (c *Context) HTML(code int, html string) {
 	c.SetHeader("Content-Type", "text/html")
 	c.Status(code)
 	c.Writer.Write([]byte(html))
+}
+
+func (c *Context) ShouldBindJSON(obj interface{}) error {
+	// 从请求中读取JSON数据
+	body, err := ioutil.ReadAll(c.Req.Body)
+	if err != nil {
+		return err
+	}
+
+	// 将JSON数据解析到提供的结构体中
+	if err := json.Unmarshal(body, obj); err != nil {
+		return err
+	}
+	return nil
 }
