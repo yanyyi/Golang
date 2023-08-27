@@ -10,7 +10,7 @@ import (
 func main() {
 	r := toy.Default()
 	r.GET("/", func(c *toy.Context) {
-		c.HTML(http.StatusOK, "<h1>Hello toy</h1>")
+		c.HTML(http.StatusOK, "<h1>Hello zin</h1>")
 	})
 
 	r.GET("/hello", func(c *toy.Context) {

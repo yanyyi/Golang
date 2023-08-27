@@ -1,4 +1,4 @@
-package toy
+package zin
 
 import (
 	"net/http"
