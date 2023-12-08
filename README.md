@@ -13,15 +13,4 @@ Go语言书籍部分相关代码的复现: [book](https://github.com/YihanZeng20
 
 Go语言操作数据库: [database](https://github.com/YihanZeng2000/Golang/tree/main/database)
 
-docker常见命令: [docker](https://github.com/YihanZeng2000/Golang/tree/main/docker)
-
-Go语言仿照Gin实现的Web框架: [toy](https://github.com/YihanZeng2000/Golang/tree/main/framework/toy)
-
-基于Gin框架的Go语言项目: [gin](https://github.com/YihanZeng2000/Golang/tree/main/gin)
-
-gorm的常见操作: [gorm](https://github.com/YihanZeng2000/Golang/tree/main/gorm)
-
-leetcode的Go语言实现: [leetcode](https://github.com/YihanZeng2000/Golang/tree/main/leetcode)
-
-Go语言微服务: [micro_service](https://github.com/YihanZeng2000/Golang/tree/main/micro_service)
 
